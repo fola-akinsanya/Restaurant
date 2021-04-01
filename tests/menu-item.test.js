@@ -1,4 +1,7 @@
 const MenuItem = require("../src/menu-item")
+// const db = require('../Database/db')
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('../restaurants.sqlite');
 
 describe('MenuItem objects', () => {
     test('have a name', () => {

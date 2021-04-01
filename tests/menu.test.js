@@ -1,6 +1,9 @@
 const { test } = require("@jest/globals")
 const Menu = require("../src/menu")
 const MenuItem = require("../src/menu-item")
+// const db = require('../Database/db')
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('../restaurants.sqlite');
 
 describe('Menu objects', () => {
     test('have a title', () => {
@@ -29,4 +32,4 @@ describe('Menu objects', () => {
     test('add Item from class only', () => {
         expect(() => new Menu("drinks","1").addItem("coke",2)).toThrowError('addItem can only add MenuItem class objects')
         })
-    })
+})
